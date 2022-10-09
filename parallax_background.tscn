@@ -1,0 +1,98 @@
+[gd_scene load_steps=16 format=3 uid="uid://bgtx1roha4qyo"]
+
+[ext_resource type="Texture2D" uid="uid://bsh67lhfxms0" path="res://GFX/parallaxii/Maalitaso 5.PNG" id="1_6rqdt"]
+[ext_resource type="Script" path="res://parallax_background.gd" id="1_k1343"]
+[ext_resource type="Texture2D" uid="uid://hqv36sdgafxl" path="res://GFX/parallaxii/Maalitaso 3.PNG" id="2_0024o"]
+[ext_resource type="Texture2D" uid="uid://d4hsn1y347bj8" path="res://GFX/parallaxii/Maalitaso 1.PNG" id="2_rc46x"]
+[ext_resource type="Texture2D" uid="uid://dvghqg5b23efq" path="res://GFX/parallaxii/Maalitaso 4.PNG" id="2_rmm1u"]
+[ext_resource type="Texture2D" uid="uid://b0671r7lidhu4" path="res://GFX/parallaxii/Maalitaso 9.PNG" id="3_38lrd"]
+[ext_resource type="Texture2D" uid="uid://btic7mbu4fp63" path="res://GFX/parallaxii/Maalitaso 7.PNG" id="3_ntjxt"]
+[ext_resource type="Texture2D" uid="uid://cen8q72lt01ne" path="res://GFX/parallaxii/Maalitaso 6.PNG" id="3_qu6ig"]
+[ext_resource type="Texture2D" uid="uid://cga0c7g74n7f6" path="res://GFX/parallaxii/Maalitaso 2.PNG" id="4_6sge1"]
+[ext_resource type="Texture2D" uid="uid://ctcsuulvcd4gm" path="res://GFX/parallaxii/Maalitaso 8.PNG" id="4_v0ih1"]
+[ext_resource type="Texture2D" uid="uid://b3d4g4qlesuho" path="res://GFX/parallaxii/Maalitaso 10.PNG" id="6_2dacs"]
+[ext_resource type="Texture2D" uid="uid://b78xlumsqs1hq" path="res://GFX/parallaxii/Maalitaso 13.PNG" id="7_2ynvf"]
+[ext_resource type="Texture2D" uid="uid://cavle1ctc55bp" path="res://GFX/parallaxii/Maalitaso 4b.PNG" id="7_w6t8u"]
+[ext_resource type="Texture2D" uid="uid://bd15g67ppsb0l" path="res://GFX/parallaxii/Maalitaso 12.PNG" id="8_2yoe2"]
+[ext_resource type="Texture2D" uid="uid://cva3w5v68luux" path="res://GFX/parallaxii/Maalitaso 11.PNG" id="8_m8qlc"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("1_k1343")
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Dark" type="Sprite2D" parent="Sky"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rc46x")
+
+[node name="bluu" type="Sprite2D" parent="Sky/Dark"]
+texture = ExtResource("1_6rqdt")
+
+[node name="red" type="Sprite2D" parent="Sky/Dark"]
+texture = ExtResource("3_qu6ig")
+
+[node name="purpl" type="Sprite2D" parent="Sky/Dark"]
+texture = ExtResource("4_6sge1")
+
+[node name="Static" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="stars" type="Sprite2D" parent="Static"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_2dacs")
+
+[node name="qarska" type="Sprite2D" parent="Static"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_2ynvf")
+
+[node name="valley" type="Sprite2D" parent="Static"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_2yoe2")
+
+[node name="minim" type="Sprite2D" parent="Static"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_m8qlc")
+
+[node name="Mountains" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="dry" type="Sprite2D" parent="Mountains"]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rmm1u")
+
+[node name="snow" type="Sprite2D" parent="Mountains"]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_w6t8u")
+
+[node name="Ground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2d" type="Sprite2D" parent="Ground"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0024o")
+
+[node name="Trees" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="runko" type="Sprite2D" parent="Trees"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ntjxt")
+
+[node name="liivs" type="Sprite2D" parent="Trees"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_v0ih1")
+
+[node name="Road" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2d" type="Sprite2D" parent="Road"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_38lrd")

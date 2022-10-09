@@ -1,0 +1,37 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1665348144
+CharacterBody2d.gd::GDScript::-1::1665348144::0::1::::<>CharacterBody2D<>::
+hsv.gdshader::Shader::-1::1665232897::0::1::::<><>::
+icon.svg::CompressedTexture2D::2380117844416998421::1665165846::1665344082::1::::<><>::
+main.gd::GDScript::-1::1665348132::0::1::::<>Node2D<>::
+main.tscn::PackedScene::5448909387580720441::1665348144::0::1::::<><>::res://main.gd<>res://CharacterBody2d.gd<>uid://bgtx1roha4qyo<>uid://857gtj47w3tp<>uid://btic7mbu4fp63<>uid://cbwgw4dhe6802<>res://Paratrees.gd<>uid://ctcsuulvcd4gm<>uid://bg7oumanhcpvx<>uid://cwe3fhd7kmmju<>uid://cut85wlps182r<>uid://b6ujjn8odh46w<>res://Menu.gd<>uid://cgwx1sxp8b0x2<>uid://b411lwhsitv3y
+Menu.gd::GDScript::-1::1665332334::0::1::::<>MarginContainer<>::
+parallax_background.gd::GDScript::-1::1665348132::0::1::::<>ParallaxBackground<>::
+parallax_background.tscn::PackedScene::2848220759167008454::1665348144::0::1::::<><>::uid://bsh67lhfxms0<>res://parallax_background.gd<>uid://hqv36sdgafxl<>uid://d4hsn1y347bj8<>uid://dvghqg5b23efq<>uid://b0671r7lidhu4<>uid://btic7mbu4fp63<>uid://cen8q72lt01ne<>uid://cga0c7g74n7f6<>uid://ctcsuulvcd4gm<>uid://b3d4g4qlesuho<>uid://b78xlumsqs1hq<>uid://cavle1ctc55bp<>uid://bd15g67ppsb0l<>uid://cva3w5v68luux
+Paratrees.gd::GDScript::-1::1665323752::0::1::::<>ParallaxBackground<>::
+README.md::TextFile::-1::1665343948::0::1::::<><>::
+::res://GFX/::1665346458
+ErämaaC.png::CompressedTexture2D::5240834642955371077::1665321756::1665344083::1::::<><>::
+menu.png::CompressedTexture2D::4477170423503110716::1665346456::1665346458::1::::<><>::
+sasd.png::CompressedTexture2D::6326962816971786166::1665315919::1665344082::1::::<><>::
+snoufleik0.png::CompressedTexture2D::2874500218308349885::1665245496::1665344082::1::::<><>::
+::res://GFX/parallaxii/::1665348358
+Maalitaso 1.PNG::CompressedTexture2D::9210306686045835303::1665166095::1665344084::1::::<><>::
+Maalitaso 2.PNG::CompressedTexture2D::5195497617130634369::1665166095::1665344084::1::::<><>::
+Maalitaso 3.PNG::CompressedTexture2D::525678664783280749::1665274453::1665344085::1::::<><>::
+Maalitaso 4.PNG::CompressedTexture2D::8646067987221040634::1665166095::1665344084::1::::<><>::
+Maalitaso 4b.PNG::CompressedTexture2D::4816869699881380249::1665265204::1665344084::1::::<><>::
+Maalitaso 5.PNG::CompressedTexture2D::107829719837226709::1665166095::1665344084::1::::<><>::
+Maalitaso 6.PNG::CompressedTexture2D::5082467609187997374::1665313837::1665344082::1::::<><>::
+Maalitaso 7.PNG::CompressedTexture2D::3736702947011367470::1665178886::1665344084::1::::<><>::
+Maalitaso 7b.PNG::CompressedTexture2D::4857514635602725624::1665265222::1665344084::1::::<><>::
+Maalitaso 8.PNG::CompressedTexture2D::6111687842181650916::1665178886::1665344084::1::::<><>::
+Maalitaso 9.PNG::CompressedTexture2D::4207127802271118681::1665178886::1665344084::1::::<><>::
+Maalitaso 10.PNG::CompressedTexture2D::4359674494773734652::1665346710::1665346746::1::::<><>::
+Maalitaso 11.PNG::CompressedTexture2D::6248548056642701335::1665346712::1665346746::1::::<><>::
+Maalitaso 12.PNG::CompressedTexture2D::2652494939119057345::1665348358::1665348364::1::::<><>::
+Maalitaso 13.PNG::CompressedTexture2D::4702005350405305142::1665346712::1665346747::1::::<><>::
+::res://SFX/::1665344085
+Erämaa.ogg::AudioStreamOggVorbis::4604125651055854992::1665322281::1665344082::1::::<><>::
+Rainloop.wav::AudioStreamWAV::6217899825265623867::1665320592::1665344085::1::::<><>::
+Walk.wav::AudioStreamWAV::4888851639172274249::1665335230::1665344085::1::::<><>::
