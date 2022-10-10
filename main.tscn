@@ -1,23 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://cjvq0hgu8aaub"]
+[gd_scene load_steps=23 format=3 uid="uid://cjvq0hgu8aaub"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_0ua6x"]
-[ext_resource type="Script" path="res://CharacterBody2d.gd" id="1_5fbvl"]
 [ext_resource type="PackedScene" uid="uid://bgtx1roha4qyo" path="res://parallax_background.tscn" id="1_cnhbg"]
-[ext_resource type="Texture2D" uid="uid://857gtj47w3tp" path="res://icon.svg" id="2_wu46q"]
+[ext_resource type="PackedScene" uid="uid://dh1aqwafr4ir" path="res://hahmo.tscn" id="3_61uoo"]
+[ext_resource type="Texture2D" uid="uid://cx3nylbd28rad" path="res://GFX/stouns.png" id="3_ouqgj"]
 [ext_resource type="Texture2D" uid="uid://btic7mbu4fp63" path="res://GFX/parallaxii/Maalitaso 7.PNG" id="4_64rnx"]
-[ext_resource type="AudioStream" uid="uid://cbwgw4dhe6802" path="res://SFX/Walk.wav" id="5_7cw22"]
 [ext_resource type="Script" path="res://Paratrees.gd" id="5_qev0p"]
 [ext_resource type="Texture2D" uid="uid://ctcsuulvcd4gm" path="res://GFX/parallaxii/Maalitaso 8.PNG" id="5_x012d"]
 [ext_resource type="Texture2D" uid="uid://bg7oumanhcpvx" path="res://GFX/snoufleik0.png" id="6_6825u"]
+[ext_resource type="Texture2D" uid="uid://cbhas6fbmldwi" path="res://GFX/parallaxii/Maalitaso 7b.PNG" id="7_uxt3k"]
 [ext_resource type="Texture2D" uid="uid://cwe3fhd7kmmju" path="res://GFX/sasd.png" id="9_ae1dw"]
 [ext_resource type="AudioStream" uid="uid://cut85wlps182r" path="res://SFX/Rainloop.wav" id="10_fxea7"]
 [ext_resource type="AudioStream" uid="uid://b6ujjn8odh46w" path="res://SFX/Erämaa.ogg" id="11_ojvo8"]
 [ext_resource type="Script" path="res://Menu.gd" id="12_5bcg6"]
 [ext_resource type="Texture2D" uid="uid://cgwx1sxp8b0x2" path="res://GFX/ErämaaC.png" id="12_bppjw"]
+[ext_resource type="Shader" path="res://hsv.gdshader" id="13_l2sum"]
 [ext_resource type="Texture2D" uid="uid://b411lwhsitv3y" path="res://GFX/menu.png" id="14_nnsgh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m06nk"]
-size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eww77"]
 size = Vector2(1920, 20)
@@ -33,7 +31,7 @@ use_hdr = true
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6fc8y"]
 emission_shape = 3
-emission_box_extents = Vector3(12000, 1, 1)
+emission_box_extents = Vector3(6000, 1, 1)
 particle_flag_align_y = true
 spread = 82.74
 flatness = 0.75
@@ -58,7 +56,7 @@ turbulence_influence_max = 0.05
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8pcy1"]
 emission_shape = 3
-emission_box_extents = Vector3(12000, 1, 1)
+emission_box_extents = Vector3(6000, 1, 1)
 particle_flag_align_y = true
 gravity = Vector3(-50, 98, 0)
 damping_max = 3.22
@@ -72,6 +70,12 @@ turbulence_noise_speed = Vector3(0.5, 10, 0.5)
 turbulence_influence_min = 0.05
 turbulence_influence_max = 0.05
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_flrfx"]
+shader = ExtResource("13_l2sum")
+shader_parameter/h = null
+shader_parameter/s = 0.8
+shader_parameter/v = null
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_0ua6x")
 
@@ -80,23 +84,13 @@ layer = -1
 offset = Vector2(960, 0)
 transform = Transform2D(1, 0, 0, 1, 960, 0)
 
-[node name="CharacterBody2d" type="CharacterBody2D" parent="."]
-position = Vector2(0, 450)
-script = ExtResource("1_5fbvl")
-metadata/_edit_group_ = true
+[node name="Sprite2d" type="Sprite2D" parent="."]
+position = Vector2(-384, 380)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ouqgj")
 
-[node name="CollisionShape2d" type="CollisionShape2D" parent="CharacterBody2d"]
-shape = SubResource("RectangleShape2D_m06nk")
-
-[node name="Sprite2d" type="Sprite2D" parent="CharacterBody2d"]
-texture = ExtResource("2_wu46q")
-
-[node name="Camera2d" type="Camera2D" parent="CharacterBody2d"]
-current = true
-limit_bottom = 540
-
-[node name="Walk" type="AudioStreamPlayer" parent="CharacterBody2d"]
-stream = ExtResource("5_7cw22")
+[node name="Hahmo" parent="." instance=ExtResource("3_61uoo")]
+position = Vector2(0, 482)
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 layer = 100
@@ -113,6 +107,13 @@ modulate = Color(0.25098, 0.25098, 0.25098, 1)
 position = Vector2(0, -100)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_64rnx")
+flip_h = true
+
+[node name="srunko" type="Sprite2D" parent="ParallaxBackground2/Trees"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+position = Vector2(0, -100)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_uxt3k")
 flip_h = true
 
 [node name="liivs" type="Sprite2D" parent="ParallaxBackground2/Trees"]
@@ -132,38 +133,38 @@ shape = SubResource("RectangleShape2D_eww77")
 [node name="Lunta" type="GPUParticles2D" parent="."]
 position = Vector2(0, -580)
 z_as_relative = false
-amount = 1500
+amount = 800
 lifetime = 5.0
-visibility_rect = Rect2(-12000, -100, 24000, 200)
+visibility_rect = Rect2(-7000, -100, 14000, 200)
 process_material = SubResource("ParticleProcessMaterial_6fc8y")
 texture = ExtResource("6_6825u")
 
 [node name="Lunta2" type="GPUParticles2D" parent="."]
 position = Vector2(0, -580)
 z_as_relative = false
-amount = 1500
+amount = 800
 lifetime = 5.0
-visibility_rect = Rect2(-12000, -100, 24000, 200)
+visibility_rect = Rect2(-7000, -100, 14000, 200)
 process_material = SubResource("ParticleProcessMaterial_6fc8y")
 texture = ExtResource("6_6825u")
 
 [node name="Sade" type="GPUParticles2D" parent="."]
 position = Vector2(0, -580)
 z_as_relative = false
-amount = 4000
+amount = 2500
 lifetime = 6.0
 speed_scale = 3.0
-visibility_rect = Rect2(-12000, -100, 24000, 200)
+visibility_rect = Rect2(-7000, -100, 14000, 200)
 process_material = SubResource("ParticleProcessMaterial_8pcy1")
 texture = ExtResource("9_ae1dw")
 
 [node name="Sade2" type="GPUParticles2D" parent="."]
 position = Vector2(0, -580)
 z_as_relative = false
-amount = 4000
+amount = 2500
 lifetime = 6.0
 speed_scale = 3.0
-visibility_rect = Rect2(-12000, -100, 24000, 200)
+visibility_rect = Rect2(-7000, -100, 14000, 200)
 process_material = SubResource("ParticleProcessMaterial_8pcy1")
 texture = ExtResource("9_ae1dw")
 
@@ -171,7 +172,7 @@ texture = ExtResource("9_ae1dw")
 stream = ExtResource("10_fxea7")
 volume_db = 1.0
 autoplay = true
-max_distance = 13000.0
+max_distance = 6500.0
 attenuation = 0.482968
 panning_strength = 0.0
 
@@ -179,14 +180,22 @@ panning_strength = 0.0
 stream = ExtResource("10_fxea7")
 volume_db = 1.0
 autoplay = true
-max_distance = 13000.0
+max_distance = 6500.0
 attenuation = 0.482968
 panning_strength = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_ojvo8")
-volume_db = -1.238
+volume_db = -5.0
 autoplay = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 120
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+material = SubResource("ShaderMaterial_flrfx")
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 128

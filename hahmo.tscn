@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://dh1aqwafr4ir"]
+
+[ext_resource type="Script" path="res://CharacterBody2d.gd" id="1_gc8xw"]
+[ext_resource type="Texture2D" uid="uid://857gtj47w3tp" path="res://icon.svg" id="2_slcah"]
+[ext_resource type="AudioStream" uid="uid://cbwgw4dhe6802" path="res://SFX/Walk.wav" id="3_0bge5"]
+[ext_resource type="Texture2D" uid="uid://cbcbmbavsye66" path="res://GFX/Hahmo/hahmo0000.png" id="4_se47l"]
+[ext_resource type="Texture2D" uid="uid://drunoqjn0m6re" path="res://GFX/Hahmo/hahmin0000.png" id="5_qswpg"]
+[ext_resource type="Texture2D" uid="uid://3lfuvx7gsf8l" path="res://GFX/Hahmo/hahmo0001.png" id="6_oed4c"]
+[ext_resource type="Texture2D" uid="uid://djojwgeffqv4a" path="res://GFX/Hahmo/hahmo0002.png" id="7_abdmn"]
+[ext_resource type="Texture2D" uid="uid://2vghgj7cmdbq" path="res://GFX/Hahmo/hahmo0003.png" id="8_yms3o"]
+[ext_resource type="Texture2D" uid="uid://ddnmr8sif7vc" path="res://GFX/Hahmo/hahmin0001.png" id="9_w5utk"]
+[ext_resource type="Texture2D" uid="uid://d2jtwqbja6yyj" path="res://GFX/Hahmo/hahmin0002.png" id="10_0aolt"]
+[ext_resource type="Texture2D" uid="uid://d0cq20l3ukkow" path="res://GFX/Hahmo/hahmin0003.png" id="11_3v0r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m06nk"]
+size = Vector2(64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvfk8"]
+animations = [{
+"frames": [ExtResource("4_se47l")],
+"loop": true,
+"name": &"idle_a",
+"speed": 5.0
+}, {
+"frames": [ExtResource("5_qswpg")],
+"loop": true,
+"name": &"idle_b",
+"speed": 5.0
+}, {
+"frames": [ExtResource("4_se47l"), ExtResource("6_oed4c"), ExtResource("7_abdmn"), ExtResource("8_yms3o")],
+"loop": true,
+"name": &"walk_a",
+"speed": 3.0
+}, {
+"frames": [ExtResource("5_qswpg"), ExtResource("9_w5utk"), ExtResource("10_0aolt"), ExtResource("11_3v0r8")],
+"loop": true,
+"name": &"walk_b",
+"speed": 5.0
+}]
+
+[node name="Hahmo" type="CharacterBody2D"]
+position = Vector2(0, 450)
+script = ExtResource("1_gc8xw")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2d" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m06nk")
+
+[node name="Sprite2d" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_slcah")
+
+[node name="Camera2d" type="Camera2D" parent="."]
+current = true
+limit_bottom = 540
+smoothing_enabled = true
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0bge5")
+
+[node name="spr" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -96)
+scale = Vector2(0.5, 0.5)
+frames = SubResource("SpriteFrames_dvfk8")
+animation = &"idle_a"
+playing = true
+flip_h = true

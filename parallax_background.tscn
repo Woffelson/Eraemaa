@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgtx1roha4qyo"]
+[gd_scene load_steps=18 format=3 uid="uid://bgtx1roha4qyo"]
 
 [ext_resource type="Texture2D" uid="uid://bsh67lhfxms0" path="res://GFX/parallaxii/Maalitaso 5.PNG" id="1_6rqdt"]
 [ext_resource type="Script" path="res://parallax_background.gd" id="1_k1343"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cavle1ctc55bp" path="res://GFX/parallaxii/Maalitaso 4b.PNG" id="7_w6t8u"]
 [ext_resource type="Texture2D" uid="uid://bd15g67ppsb0l" path="res://GFX/parallaxii/Maalitaso 12.PNG" id="8_2yoe2"]
 [ext_resource type="Texture2D" uid="uid://cva3w5v68luux" path="res://GFX/parallaxii/Maalitaso 11.PNG" id="8_m8qlc"]
+[ext_resource type="Texture2D" uid="uid://cbhas6fbmldwi" path="res://GFX/parallaxii/Maalitaso 7b.PNG" id="14_kh5uo"]
+[ext_resource type="Texture2D" uid="uid://d3whmtge7uuk2" path="res://GFX/parallaxii/Maalitaso 14.PNG" id="16_k0yp2"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("1_k1343")
@@ -57,7 +59,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_m8qlc")
 
 [node name="Mountains" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.4, 1)
+motion_scale = Vector2(0.2, 1)
 motion_mirroring = Vector2(1920, 0)
 
 [node name="dry" type="Sprite2D" parent="Mountains"]
@@ -86,6 +88,10 @@ motion_mirroring = Vector2(1920, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_ntjxt")
 
+[node name="srunko" type="Sprite2D" parent="Trees"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_kh5uo")
+
 [node name="liivs" type="Sprite2D" parent="Trees"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_v0ih1")
@@ -93,6 +99,10 @@ texture = ExtResource("4_v0ih1")
 [node name="Road" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(1920, 0)
 
-[node name="Sprite2d" type="Sprite2D" parent="Road"]
+[node name="normroad" type="Sprite2D" parent="Road"]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_38lrd")
+
+[node name="minroad" type="Sprite2D" parent="Road"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_k0yp2")

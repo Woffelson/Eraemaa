@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pleijer = $CharacterBody2d
+@onready var pleijer = $Hahmo
 @onready var para_bak = $ParallaxBackground
 @onready var para_front = $ParallaxBackground2
 @onready var lunta = $Lunta
@@ -10,7 +10,7 @@ extends Node2D
 @onready var rainloop = $Rainloop
 @onready var rainloop2 = $Rainloop2
 @onready var menu_gui = $CanvasLayer/Menu
-const poronkusema = 8000
+const poronkusema = 4000
 const TRA = 1000 #transition area
 var pl_pos_x = 0
 var etapit = null
@@ -18,7 +18,6 @@ var etappi_kpl = 13
 var menu = true
 
 func _ready():
-	#pleijer.position.x = poronkusema *11
 	lunta.position.x = poronkusema*8
 	lunta2.position.x = -poronkusema*8
 	sade.position.x = poronkusema*3.75
@@ -27,7 +26,6 @@ func _ready():
 	rainloop2.position.x = -poronkusema*3.75
 	etapit = range(poronkusema,poronkusema*etappi_kpl,poronkusema)
 	pleijer.posi.connect(self.set_pl_pos)
-	print(etapit)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("any_key"):
@@ -44,9 +42,20 @@ func set_pl_pos(x): #value taken from signal
 			if tsekpossi <= etappi+TRA: #transition area
 				between_prkl(etappi,tsekpossi)
 			else: reuna_prkl(etappi)
-		if tsekpossi > poronkusema*etappi_kpl:
-			pleijer.position.x -= sign(pleijer.position.x)*8
-			pleijer.position.x *= -1 #wrap around world
+		if tsekpossi > poronkusema*(etappi_kpl-1)+poronkusema/4: #edge of the world (which never works...)
+			pleijer.minim = true
+			pleijer.spr.offset.y = 32
+			pleijer.kamera.reset_smoothing()
+		else:
+			pleijer.minim = false
+			pleijer.spr.offset.y = 0
+			pleijer.kamera.reset_smoothing()
+		if pleijer.position.x > poronkusema*etappi_kpl:pleijer.position.x = -poronkusema*etappi_kpl
+		elif pleijer.position.x < -poronkusema*etappi_kpl: pleijer.position.x = poronkusema*etappi_kpl #jos ei väkisin ni väkisin!!!
+			#PERKELEVITTUSAATANAJUMALAUTAHELVETTIPASKAPASKAPASKAPASKA MIKSEI VITTU MENE!?!?!?!?!?
+#			pleijer.position.x *= -1 #wrap around world
+#			pleijer.position.x = sign(pleijer.position.x)*min(poronkusema*etappi_kpl,\
+#				tsekpossi)
 
 func between_prkl(etp,tsek):
 	para_bak.nykyetappi = etp/poronkusema

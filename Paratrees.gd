@@ -2,6 +2,7 @@ extends ParallaxBackground
 
 @onready var runko = $Trees/runko
 @onready var liivs = $Trees/liivs
+@onready var srunko = $Trees/srunko
 
 const TRA = 1000 #transition area
 var nykyetappi = 0
@@ -10,6 +11,7 @@ var tween = null
 var tween_values = [Vector2(0.705,0.7),Vector2(0.7,0.72)]
 
 func _ready():
+	srunko.set_self_modulate(Color(1,1,1,0))
 	tween = get_tree().create_tween()
 	tween.tween_property(liivs, "scale", tween_values[0], 1).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(liivs, "scale", tween_values[1], 1).set_trans(Tween.TRANS_SINE)
@@ -19,6 +21,8 @@ func _process(_delta):
 	if pos_in_between > 0:
 		match (nykyetappi):
 			5: modulator_self(liivs,-1)
+			#7: modulator_self(srunko)
+			#8: modulator_self(runko,-1)
 			10:
 				shrink(runko)
 				modulator_self(runko,-1)

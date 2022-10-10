@@ -11,6 +11,8 @@ extends "res://Paratrees.gd"
 @onready var st_minim = $Static/minim
 @onready var st_qarska = $Static/qarska
 @onready var st_valley = $Static/valley
+@onready var rd_norm = $Road/normroad
+@onready var rd_min = $Road/minroad
 var sky_spede = -24
 
 func _ready():
@@ -21,12 +23,14 @@ func _ready():
 	tween.set_loops(0)
 	dry.set_self_modulate(Color(1,1,1,0))
 	snow.set_self_modulate(Color(1,1,1,0))
+	srunko.set_self_modulate(Color(1,1,1,0))
 	sky_red.set_self_modulate(Color(1,1,1,0))
 	sky_purpl.set_self_modulate(Color(1,1,1,0))
 	st_stars.set_modulate(Color(1,1,1,0))
 	st_minim.set_modulate(Color(1,1,1,0))
 	st_qarska.set_modulate(Color(1,1,1,0))
 	st_valley.set_modulate(Color(1,1,1,0))
+	rd_min.set_modulate(Color(1,1,1,0))
 
 func _process(delta):
 #	if Input.is_action_just_pressed("ui_accept"):
@@ -42,14 +46,16 @@ func _process(delta):
 			4: modulator_self(sky_blu,-1)
 			5: modulator_self(liivs,-1)
 			6:
-				modulator_self(dry,-1)
 				modulator(st_stars)
 				modulator_self(snow)
-			7: modulator_self(sky_purpl)
-			8: modulator_self(sky_red,-1)
-			9:
-				modulator_self(sky_purpl,-1)
-				
+			7: 
+				modulator_self(dry,-1)
+				#modulator_self(srunko)
+				modulator_self(sky_purpl)
+			8: 
+				modulator_self(sky_red,-1)
+				#modulator_self(runko,-1)
+			9: modulator_self(sky_purpl,-1)
 			10:
 				shrink(runko)
 				modulator(runko,-1)
@@ -58,6 +64,8 @@ func _process(delta):
 			11: modulator_self(snow,-1)
 			12: 
 				modulator(st_minim)
+				modulator(rd_min)
+				modulator(rd_norm,-1)
 				modulator(st_qarska,-1)
 				modulator(st_valley,-1)
 				modulator(st_stars,-1)
