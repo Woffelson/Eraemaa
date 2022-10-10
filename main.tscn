@@ -103,21 +103,21 @@ motion_scale = Vector2(1.5, 1)
 motion_mirroring = Vector2(2688, 0)
 
 [node name="runko" type="Sprite2D" parent="ParallaxBackground2/Trees"]
-modulate = Color(0.25098, 0.25098, 0.25098, 1)
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(0, -100)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_64rnx")
 flip_h = true
 
 [node name="srunko" type="Sprite2D" parent="ParallaxBackground2/Trees"]
-modulate = Color(0.25098, 0.25098, 0.25098, 1)
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(0, -100)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("7_uxt3k")
 flip_h = true
 
 [node name="liivs" type="Sprite2D" parent="ParallaxBackground2/Trees"]
-modulate = Color(0.25098, 0.25098, 0.25098, 1)
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
 position = Vector2(0, -100)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_x012d")
@@ -212,24 +212,29 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Menu"]
 modulate = Color(0, 0, 0, 1)
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="HSplitContainer" type="HSplitContainer" parent="CanvasLayer/Menu"]
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="Title" type="TextureRect" parent="CanvasLayer/Menu"]
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("14_nnsgh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu"]
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Menu/HBoxContainer"]
+layout_mode = 2
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 3

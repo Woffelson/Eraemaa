@@ -1,8 +1,3 @@
 res://main.tscn
 res://parallax_background.tscn
-res://CharacterBody2d.gd
-res://parallax_background.gd
-res://main.gd
 res://hahmo.tscn
-res://Paratrees.gd
-res://hsv.gdshader
